@@ -4,7 +4,7 @@ import "./style.css";
 
 export default class Clicky extends Component {
   render() {
-    const { src, alt, handleClick, id } = this.props;
-    return <Image src={src} alt={alt} onClick={handleClick} key={id} rounded />;
+    const { src, alt, clickEvent, id } = this.props;
+    return <Image src={src} alt={alt} onClick={clickEvent} key={id} rounded />;
   }
 }

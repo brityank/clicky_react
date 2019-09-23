@@ -15,7 +15,7 @@ export default class Body extends Component {
               <Button variant="primary">Start Game</Button>
             </p>
           </Jumbotron>
-          {children}
+          <div className="grid">{children}</div>
         </Container>
       </div>
     );

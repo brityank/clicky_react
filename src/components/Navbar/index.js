@@ -3,10 +3,8 @@ import { Navbar, Nav } from "react-bootstrap";
 import "./style.css";
 
 export default class Navigation extends Component {
-
-  const {msg, score} = this.props;
-
   render() {
+    const { msg, score, highScore } = this.props;
     return (
       <div>
         <Navbar bg="light" expand="md">
@@ -14,10 +12,11 @@ export default class Navigation extends Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mx-auto">
-              <Nav.Item>{this.props.msg}</Nav.Item>
+              <Nav.Item>{msg}</Nav.Item>
             </Nav>
             <Nav className="ml-auto">
-              <Nav.Item>{this.props.msg}</Nav.Item>
+              <Nav.Item>{score}</Nav.Item>
+              <Nav.Item>High Score:{highScore}</Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
