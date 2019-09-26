@@ -3,10 +3,8 @@ import { Navbar, Nav } from "react-bootstrap";
 import "./style.css";
 
 export default class Navigation extends Component {
-
-  const {msg, score} = this.props;
-
   render() {
+    const { msg, score, highScore } = this.props;
     return (
       <div>
         <Navbar bg="light" expand="md">
@@ -17,7 +15,12 @@ export default class Navigation extends Component {
               <Nav.Item>{this.props.msg}</Nav.Item>
             </Nav>
             <Nav className="ml-auto">
-              <Nav.Item>{this.props.msg}</Nav.Item>
+              <Nav.Item className="mx-1">
+                Current Score: {this.props.score}
+              </Nav.Item>
+              <Nav.Item className="mx-1">
+                High Score: {this.props.highScore}
+              </Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
