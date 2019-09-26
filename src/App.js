@@ -8,24 +8,40 @@ import imageList from "./data/imageList";
 import _ from "underscore";
 
 export default class App extends React.Component {
-  componentDidMount() {
-    this.setState({
-      currentScore: 0,
-      highScore: 0,
-      shake: false,
-      usrMessage: "",
-      images: imageList
-    });
+  state = {
+    currentScore: 0,
+    highScore: 0,
+    shake: false,
+    usrMessage: "Don't click on the same gif twice!",
+    images: imageList,
+    clicked: []
+  };
+
+  handleClick(e) {
+    const newState = { ...this.state };
+    newState.clicked.push(e.target.alt);
+    newState.images = _.shuffle(newState.images);
+    this.setState({ newState });
   }
+
   render() {
-    const {currentScore, highScore, correctGuess, shake, usrMessage, images}
+    const { currentScore, highScore, shake, usrMessage, images } = this.state;
     return (
       <div>
-        <Nav currentScore={currentScore} highScore{/>
+        <Nav score={currentScore} highScore={highScore} msg={usrMessage} />
         <Body>
-          {images.map((image, i) => {
-            return <Clicky ;
-          })}
+          <div className={shake ? "grid animated shake" : "grid"}>
+            {images.map((image, i) => {
+              return (
+                <Clicky
+                  src={image.src}
+                  alt={image.alt}
+                  key={i}
+                  handleClick={this.handleClick.bind(this)}
+                />
+              );
+            })}
+          </div>
         </Body>
       </div>
     );
