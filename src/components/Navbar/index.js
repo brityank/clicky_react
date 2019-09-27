@@ -15,8 +15,8 @@ export default class Navigation extends Component {
               <Nav.Item>{msg}</Nav.Item>
             </Nav>
             <Nav className="ml-auto">
-              <Nav.Item className="mx-1">Current Score: {this.props.score}</Nav.Item>
-              <Nav.Item className="mx-1">High Score: {this.props.highScore}</Nav.Item>
+              <Nav.Item className="mx-1">Current Score: {score}</Nav.Item>
+              <Nav.Item className="mx-1">High Score: {highScore}</Nav.Item>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
