@@ -16,3 +16,7 @@ img:focus,
 img:active {
   transform: scale(1.05);
 }
+
+img:hover {
+  cursor: pointer;
+}
