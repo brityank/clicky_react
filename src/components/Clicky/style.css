@@ -1,6 +1,6 @@
 img {
-  height: 200px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   display: inline-block;
   vertical-align: middle;
@@ -8,15 +8,19 @@ img {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
+  transition-duration: 0.7s;
   transition-property: transform;
 }
 
-img:focus,
-img:active {
-  transform: scale(1.05);
+.img-container:focus,
+.img-container:active,
+.img-container:hover {
+  transition-duration: 0.7s;
+  transform: scale(1.07);
+  cursor: pointer;
 }
 
-img:hover {
-  cursor: pointer;
+.img-container {
+  max-height: 300px;
+  max-width: 300px;
 }
