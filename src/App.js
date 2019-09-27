@@ -5,6 +5,7 @@ import Clicky from "./components/Clicky";
 import Nav from "./components/Navbar";
 import imageList from "./data/imageList";
 import { shuffle } from "underscore";
+import msgList from "./data/msgList";
 
 export default class App extends React.Component {
   state = {
@@ -29,7 +30,7 @@ export default class App extends React.Component {
     } else {
       newState.currentScore++;
       newState.highScore = newState.highScore < newState.currentScore ? newState.currentScore : newState.highScore;
-      newState.usrMessage = "Correct! Keep going!";
+      newState.usrMessage = msgList[Math.floor(Math.random() * msgList.length)];
       newState.winning = true;
       newState.shake = false;
     }
