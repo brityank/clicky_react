@@ -4,10 +4,12 @@ import "./style.css";
 
 export default class Body extends Component {
   render() {
-    const { children } = this.props;
+    const { children, shake } = this.props;
     return (
       <div>
-        <Container fluid>{children}</Container>
+        <Container fluid>
+          <div className={shake ? "grid animated shake" : "grid"}>{children}</div>
+        </Container>
       </div>
     );
   }
