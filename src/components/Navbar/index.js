@@ -7,18 +7,23 @@ export default class Navigation extends Component {
     const { msg, score, highScore } = this.props;
     return (
       <div>
-        <Navbar bg="light" expand="md">
-          <Navbar.Brand href="#home">Clicky-Game</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mx-auto">
-              <Nav.Item>{msg}</Nav.Item>
-            </Nav>
-            <Nav className="ml-auto">
-              <Nav.Item className="mx-1">Current Score: {score}</Nav.Item>
-              <Nav.Item className="mx-1">High Score: {highScore}</Nav.Item>
-            </Nav>
-          </Navbar.Collapse>
+        <Navbar bg="light">
+          <Navbar.Brand>Er, phrasing?</Navbar.Brand>
+          <Nav className="mx-auto">
+            <Nav.Item>
+              Current Score: <strong>{score}</strong>
+            </Nav.Item>
+          </Nav>
+          <Nav className="ml-auto">
+            <Nav.Item>
+              High Score: <strong>{highScore}</strong>
+            </Nav.Item>
+          </Nav>
+        </Navbar>
+        <Navbar>
+          <Nav className="mx-auto">
+            <Nav.Item>{msg}</Nav.Item>
+          </Nav>
         </Navbar>
       </div>
     );
