@@ -16,7 +16,7 @@ The idea is to only click on each gif once, but it is difficult as the order shi
 
 ## Contact
 Aaron Keisler - @abritishyank aaron@keisler.dev
-Project Link - https://github.com/aaronclimbs/
+Project Link - https://github.com/aaronclimbs/clicky_react
 
 ## Roadmap
 
